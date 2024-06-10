@@ -29,6 +29,8 @@ namespace Caixa_Eletronico
 
         public List<Conta> contas;
 
+        public Conta conta_logada;//mudar
+
         public Conta BuscarConta(string numero)
         {
             Conta c = contas.Find(c => c.Numero == numero);
