@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace Caixa_Eletronico
 {
-    public partial class frmExtrato : Form
+    public partial class FrmExtrato : Form
     {
-        public frmExtrato()
+        Singleton s;//mudar
+        public FrmExtrato()
         {
             InitializeComponent();
+            s = Singleton.Instance;
+        }
+
+        private void Recarregar()//mudar
+        {
+            var source = new BindingSource();
+            source.DataSource = s.conta_logada.Transacoes;
+            dgvExtrato.DataSource = source;
+        }
+
+        private void frmExtrato_Load(object sender, EventArgs e)
+        {
+            Recarregar();//mudar
+        }
+
+        private void BtVoltar_Click(object sender, EventArgs e)//mudar
+        {
+            frmPrincipal frm = new frmPrincipal();
+            frm.Show();
+            this.Close();
         }
     }
 }
