@@ -23,7 +23,7 @@ namespace Caixa_Eletronico
         {
             var source = new BindingSource();
             source.DataSource = s.conta_logada.Transacoes;
-            dgvExtrato.DataSource = source;
+            DgvExtrato.DataSource = source;
         }
 
         private void frmExtrato_Load(object sender, EventArgs e)
