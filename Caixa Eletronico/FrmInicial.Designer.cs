@@ -50,6 +50,7 @@
             btCaixa.TabIndex = 1;
             btCaixa.Text = "Caixa Eletrônico";
             btCaixa.UseVisualStyleBackColor = true;
+            btCaixa.Click += btCaixa_Click;
             // 
             // FrmInicial
             // 

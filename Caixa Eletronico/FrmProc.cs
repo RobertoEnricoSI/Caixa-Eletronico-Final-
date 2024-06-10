@@ -14,22 +14,22 @@ namespace Caixa_Eletronico
 {
     public partial class FrmProc : Form
     {
-        bool pode_N;//mudar
-        bool pode_T;//mudar
-        Singleton s;//mudar
-        private string tipo;//mudar
+        bool pode_N;
+        bool pode_T;
+        Singleton vito;
+        private string tipo;
 
-        public FrmProc()//mudar
+        public FrmProc()
         {
-            s = Singleton.Instance;
+            vito = Singleton.Instance;
         }
-        public FrmProc(string tipo) : this()//mudar
+        public FrmProc(string tipo) : this()
         {
             InitializeComponent();
             this.tipo = tipo;
         }
 
-        private void FrmProc_Load(object sender, EventArgs e)//mudar
+        private void FrmProc_Load(object sender, EventArgs e)
         {
             LblOpcao.Text = tipo;
             if (tipo == "Transferência")
@@ -38,12 +38,12 @@ namespace Caixa_Eletronico
                 label2.Visible = true;
             }
         }
-        private void BtnEnviar_Click(object sender, EventArgs e)//mudar
+        private void BtnEnviar_Click(object sender, EventArgs e)
         {
             if (tipo == "Saque")
             {
                 double valor = (double)NumValor.Value;
-                if (s.conta_logada.Sacar(valor))
+                if (vito.conta_logada.Sacar(valor))
                 {
                     MessageBox.Show("Saque realizado!");
                 }
@@ -55,16 +55,16 @@ namespace Caixa_Eletronico
             if (tipo == "Depósito")
             {
                 double valor = (double)NumValor.Value;
-                s.conta_logada.Depositar(valor);
+                vito.conta_logada.Depositar(valor);
                 MessageBox.Show("Depósito realizado!");
             }
             if (tipo == "Transferência")
             {
                 double valor = (double)NumValor.Value;
-                Conta destino = s.BuscarConta(TxtConta.Text);
+                Conta destino = vito.BuscarConta(TxtConta.Text);
                 if (destino != null)
                 {
-                    if (s.conta_logada.Transferir(destino, valor))
+                    if (vito.conta_logada.Transferir(destino, valor))
                     {
                         MessageBox.Show("Transferência realizada!");
                     }
@@ -78,11 +78,11 @@ namespace Caixa_Eletronico
                     MessageBox.Show("Conta destino não existe!");
                 }
             }
-            frmPrincipal frm = new frmPrincipal();
+            FrmCaixa frm = new FrmCaixa();
             frm.Show();
             this.Hide();
         }
-        private void numValor_ValueChanged(object sender, EventArgs e)//mudar
+        private void numValor_ValueChanged(object sender, EventArgs e)
         {
             if (tipo != "Transferência")
             {
@@ -110,7 +110,7 @@ namespace Caixa_Eletronico
             }
         }
 
-        private void txtConta_TextChanged(object sender, EventArgs e)//mudar
+        private void txtConta_TextChanged(object sender, EventArgs e)
         {
             if (TxtConta.Text != "")
             {
@@ -122,13 +122,12 @@ namespace Caixa_Eletronico
                 BtnEnviar.Enabled = false;
             }
         }
-        private void CheckEnableBtFazer()//mudar
+        private void CheckEnableBtFazer()
         {
             if (tipo == "Transferência")
             {
                 BtnEnviar.Enabled = pode_N && pode_T;
             }
         }
-
     }
 }

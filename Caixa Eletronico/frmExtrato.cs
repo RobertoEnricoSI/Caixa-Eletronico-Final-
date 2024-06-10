@@ -12,28 +12,28 @@ namespace Caixa_Eletronico
 {
     public partial class FrmExtrato : Form
     {
-        Singleton s;//mudar
+        Singleton vitinho;
         public FrmExtrato()
         {
             InitializeComponent();
-            s = Singleton.Instance;
+            vitinho = Singleton.Instance;
         }
 
-        private void Recarregar()//mudar
+        private void Recarregar()
         {
             var source = new BindingSource();
-            source.DataSource = s.conta_logada.Transacoes;
+            source.DataSource = vitinho.conta_logada.Transacoes;
             DgvExtrato.DataSource = source;
         }
 
         private void frmExtrato_Load(object sender, EventArgs e)
         {
-            Recarregar();//mudar
+            Recarregar();
         }
 
-        private void BtVoltar_Click(object sender, EventArgs e)//mudar
+        private void BtVoltar_Click(object sender, EventArgs e)
         {
-            frmPrincipal frm = new frmPrincipal();
+            FrmCaixa frm = new FrmCaixa();
             frm.Show();
             this.Close();
         }

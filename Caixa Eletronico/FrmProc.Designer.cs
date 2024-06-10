@@ -52,6 +52,7 @@
             label2.Size = new Size(100, 15);
             label2.TabIndex = 2;
             label2.Text = "Conta de destino:";
+            label2.Visible = false;
             // 
             // TxtConta
             // 
@@ -59,6 +60,7 @@
             TxtConta.Name = "TxtConta";
             TxtConta.Size = new Size(120, 23);
             TxtConta.TabIndex = 3;
+            TxtConta.Visible = false;
             // 
             // BtnEnviar
             // 

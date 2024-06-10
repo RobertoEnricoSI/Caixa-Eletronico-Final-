@@ -26,5 +26,14 @@ namespace Caixa_Eletronico
         {
             Application.Exit();
         }
+
+        private void btCaixa_Click(object sender, EventArgs e)
+        {
+            FrmCaixa frm = new FrmCaixa();
+
+            frm.Show();
+
+            this.Hide();
+        }
     }
 }

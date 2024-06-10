@@ -12,22 +12,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Caixa_Eletronico
 {
-    public partial class frmPrincipal : Form
+    public partial class FrmCaixa : Form
     {
         Singleton s;
-        public FrmPrincipal()
+        public FrmCaixa()
         {
             InitializeComponent();
             s = Singleton.Instance;
         }
-
         private void btA_Click(object sender, EventArgs e)
         {
             Conta c = s.BuscarConta(txA.Text);
             if (c != null)
             {
                 s.conta_logada = c;
-                frmPrincipal frm = new frmPrincipal();
+                FrmPrincipal frm = new FrmPrincipal();
                 frm.Show();
                 this.Hide();
             }

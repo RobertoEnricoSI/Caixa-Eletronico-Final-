@@ -29,7 +29,7 @@ namespace Caixa_Eletronico
 
         public List<Conta> contas;
 
-        public Conta conta_logada;//mudar
+        public Conta conta_logada;
 
         public Conta BuscarConta(string numero)
         {

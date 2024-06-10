@@ -1,6 +1,6 @@
 ﻿namespace Caixa_Eletronico
 {
-    partial class frmPrincipal
+    partial class FrmCaixa
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             btA.UseVisualStyleBackColor = false;
             btA.Click += btA_Click;
             // 
-            // Form1
+            // FrmCaixa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -70,8 +70,8 @@
             Controls.Add(btA);
             Controls.Add(txA);
             Controls.Add(lblC);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "FrmCaixa";
+            Text = "FormCaixa";
             ResumeLayout(false);
             PerformLayout();
         }
