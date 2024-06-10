@@ -14,9 +14,11 @@ namespace Caixa_Eletronico
 {
     public partial class Form1 : Form
     {
+        Singleton s;
         public Form1()
         {
             InitializeComponent();
+            s = Singleton.Instance;
         }
 
         private void btA_Click(object sender, EventArgs e)
