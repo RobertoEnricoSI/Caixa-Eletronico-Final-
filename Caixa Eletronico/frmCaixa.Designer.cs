@@ -44,6 +44,7 @@
             // 
             // txA
             // 
+            txA.BackColor = SystemColors.Control;
             txA.Location = new Point(81, 84);
             txA.Name = "txA";
             txA.Size = new Size(208, 23);
@@ -51,19 +52,21 @@
             // 
             // btA
             // 
+            btA.BackColor = SystemColors.Control;
             btA.Location = new Point(147, 126);
             btA.Name = "btA";
             btA.Size = new Size(75, 23);
             btA.TabIndex = 3;
             btA.Text = "Acessar";
-            btA.UseVisualStyleBackColor = true;
+            btA.UseVisualStyleBackColor = false;
             btA.Click += btA_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(576, 271);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(521, 243);
             Controls.Add(btA);
             Controls.Add(txA);
             Controls.Add(lblC);
