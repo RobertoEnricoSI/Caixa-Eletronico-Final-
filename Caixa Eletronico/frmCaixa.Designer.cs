@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            lblC = new Label();
+            txA = new TextBox();
+            btA = new Button();
+            SuspendLayout();
+            // 
+            // lblC
+            // 
+            lblC.AutoSize = true;
+            lblC.Location = new Point(36, 87);
+            lblC.Name = "lblC";
+            lblC.Size = new Size(39, 15);
+            lblC.TabIndex = 0;
+            lblC.Text = "Conta";
+            // 
+            // txA
+            // 
+            txA.Location = new Point(81, 84);
+            txA.Name = "txA";
+            txA.Size = new Size(208, 23);
+            txA.TabIndex = 2;
+            // 
+            // btA
+            // 
+            btA.Location = new Point(147, 126);
+            btA.Name = "btA";
+            btA.Size = new Size(75, 23);
+            btA.TabIndex = 3;
+            btA.Text = "Acessar";
+            btA.UseVisualStyleBackColor = true;
+            btA.Click += btA_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(576, 271);
+            Controls.Add(btA);
+            Controls.Add(txA);
+            Controls.Add(lblC);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblC;
+        private TextBox txA;
+        private Button btA;
     }
 }
