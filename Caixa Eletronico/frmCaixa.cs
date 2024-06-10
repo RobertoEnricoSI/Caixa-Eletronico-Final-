@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Caixa_Eletronico
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
         Singleton s;
-        public Form1()
+        public FrmPrincipal()
         {
             InitializeComponent();
             s = Singleton.Instance;
